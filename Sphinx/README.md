@@ -4,29 +4,25 @@
 git config credential.helper store
 
 
-gcc -o hello_ps hello_ps.c     -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\"     `pkg-config --cflags --libs pocketsphinx sphinxbase`
+gcc -o ps_file ps_file.c     -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\"     `pkg-config --cflags --libs pocketsphinx sphinxbase`
 
 git add --all
+
+git add .
 
 git commit -m "new msg"
 
 git push -u origin master
 
-rec -r 16k -e signed-integer -b 16 -c 1 hello_ps.raw
+rec -r 16k -e signed-integer -b 16 -c 1 ps_file.raw
 
-./hello_ps
+./ps_file
 
 
 
 #Sphinx mic read continuous
 
 pocketsphinx_continuous -inmic yes -lm /home/stas/Sphinx/j.lm -dict /home/stas/Sphinx/j.dic
-
-gcc -o sphinx_mic sphinx_mic.c     -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\"     `pkg-config --cflags --libs pocketsphinx sphinxbase`
-
-git add --all && git commit -m "EDIT THIS MSG" && git push -u origin master
-
-./sphinx_mic
 
 
 #Для использования скрипта python

@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     config = cmd_ln_init(NULL, ps_args(), TRUE,
 		         "-hmm", MODELDIR "/en-us/en-us",
 		         "-lm", "/var/www/sphinx/j.lm",
-	    		 "-dict", "j.dic",
+	    		 "-dict", "/var/www/sphinx/j.dic",
 		         NULL);
     if (config == NULL) {
 	fprintf(stderr, "Failed to create config object, see log for details\n");
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     rv = ps_end_utt(ps);
     hyp = ps_get_hyp(ps, &score);
 
-    printf(hyp);
+    printf("%s\n", hyp);
 /*
     int rescmp = strcmp(hyp, "JARVICE");
 

@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
 
     config = cmd_ln_init(NULL, ps_args(), TRUE,
 		         "-hmm", MODELDIR "/en-us/en-us",
-		         "-lm", "/home/u/Sphinx/j.lm",
-	    		 "-dict", "/home/u/Sphinx/j.dic",
+		         "-lm", "/var/www/sphinx/j.lm",
+	    		 "-dict", "j.dic",
 		         NULL);
     if (config == NULL) {
 	fprintf(stderr, "Failed to create config object, see log for details\n");

@@ -4,7 +4,7 @@
     //exec("rec -r 16k -e signed-integer -b 16 -c 1 ps_file.raw </dev/null >/dev/null 2>&1 &");
 
     $path = getcwd();
-    chdir('/home/u/Sphinx/');
+    chdir('/var/www/sphinx/');
     exec("rec -r 16k -e signed-integer -b 16 -c 1 /tmp/ps_file.raw </dev/null >/dev/null 2>&1 &");
     echo "<p>Rec!";
     sleep(2);

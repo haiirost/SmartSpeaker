@@ -10,8 +10,8 @@ MODELDIR = "/usr/local/share/pocketsphinx/model/"
 
 config = Decoder.default_config()
 config.set_string('-hmm', path.join(MODELDIR, 'en-us/en-us'))
-config.set_string('-lm', '/home/u/Sphinx/j.lm')
-config.set_string('-dict', '/home/u/Sphinx/j.dic')
+config.set_string('-lm', '/var/www/sphinx/j.lm')
+config.set_string('-dict', '/var/www/sphinx/j.dic')
 decoder = Decoder(config)
 
 p = pyaudio.PyAudio()

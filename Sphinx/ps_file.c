@@ -46,6 +46,7 @@ int main(int argc, char *argv[])
     rv = ps_end_utt(ps);
     hyp = ps_get_hyp(ps, &score);
 
+	
     printf("Rec:%s\n", hyp);
 /*
     int rescmp = strcmp(hyp, "JARVICE");

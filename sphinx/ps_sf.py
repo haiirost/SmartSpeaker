@@ -28,8 +28,6 @@ with open("ps_sf.raw", "wb") as f:
 
 decoder.start_utt()
 stream = open('ps_sf.raw', 'rb')
-decoder.start_utt()
-stream = open('ps_sf.raw', 'rb')
 while True:
   buf = stream.read(1024)
   if buf:

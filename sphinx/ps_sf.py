@@ -36,7 +36,10 @@ while True:
     break
 decoder.end_utt()
 print ('Best hypothesis segments: ', [seg.word for seg in decoder.seg()])
-
+if decoder.hyp().hypstr == 'JARVIS':
+    print (1)
+else:
+    print (decoder.hyp().hypstr)
 
 
 

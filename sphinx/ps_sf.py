@@ -26,6 +26,7 @@ with sr.Microphone() as source:
 with open("ps_sf.raw", "wb") as f:
     f.write(audio.get_raw_data()) 
 
+in_speech_bf = False
 decoder.start_utt()
 stream = open('ps_sf.raw', 'rb')
 while True:

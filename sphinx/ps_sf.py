@@ -29,14 +29,21 @@ with open("ps_sf.raw", "wb") as f:
 decoder.start_utt()
 stream = open('ps_sf.raw', 'rb')
 while True:
-  buf = stream.read(1024)
-  if buf:
-    decoder.process_raw(buf, False, False)
-  else:
-    break
+    buf = stream.read(1024)
+    if buf:
+        decoder.process_raw(buf, False, False)
+        if decoder.get_in_speech() != in_speech_bf:
+            in_speech_bf = decoder.get_in_speech()
+            if not in_speech_bf:
+                decoder.end_utt()
+                if decoder.hyp().hypstr == 'JARVIS':
+                    print (1)
+                else:
+                    print (decoder.hyp().hypstr)
+                decoder.start_utt()
+    else:
+        break    
 decoder.end_utt()
-print (decoder.hyp().hypstr)
-#print ('Best hypothesis segments: ', [seg.word for seg in decoder.seg()])
 
 
 

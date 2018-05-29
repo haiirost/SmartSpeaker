@@ -28,7 +28,7 @@ decoder = Decoder(config)
    #         in_speech_bf = decoder.get_in_speech()
     #        if not in_speech_bf:
      #           decoder.end_utt()
-      #          if decoder.hyp().hypstr == 'JARVICE':
+      #          if decoder.hyp().hypstr == 'JARVIS':
        #             print (1)
         #        else:
          #           print (decoder.hyp().hypstr)
@@ -37,7 +37,9 @@ decoder = Decoder(config)
      #   break    
 #decoder.end_utt()
 
-
+p = pyaudio.PyAudio()
+#stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=1024)
+#stream.start_stream() 
 
 decoder.start_utt()
 stream = open('ps_sf.raw', 'rb')

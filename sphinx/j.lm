@@ -1,0 +1,97 @@
+Language model created by QuickLM on Tue May 29 09:34:40 EDT 2018
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 19 sentences and 20 words
+
+\data\
+ngram 1=20
+ngram 2=36
+ngram 3=18
+
+\1-grams:
+-0.7782 </s> -0.3010
+-0.7782 <s> -0.2218
+-2.0569 JA -0.2218
+-2.0569 JAF -0.2218
+-2.0569 JAK -0.2218
+-2.0569 JAL -0.2218
+-2.0569 JAN -0.2218
+-2.0569 JAR -0.2218
+-2.0569 JARH -0.2218
+-2.0569 JARL -0.2218
+-2.0569 JARM -0.2218
+-2.0569 JART -0.2218
+-2.0569 JARV -0.2218
+-1.7559 JARVA -0.2218
+-2.0569 JARVE -0.2218
+-2.0569 JARVIH -0.2218
+-2.0569 JARVIS -0.2218
+-2.0569 JARVIT -0.2218
+-2.0569 JARVY -0.2218
+-2.0569 JAT -0.2218
+
+\2-grams:
+-1.5798 <s> JA 0.0000
+-1.5798 <s> JAF 0.0000
+-1.5798 <s> JAK 0.0000
+-1.5798 <s> JAL 0.0000
+-1.5798 <s> JAN 0.0000
+-1.5798 <s> JAR 0.0000
+-1.5798 <s> JARH 0.0000
+-1.5798 <s> JARL 0.0000
+-1.5798 <s> JARM 0.0000
+-1.5798 <s> JART 0.0000
+-1.5798 <s> JARV 0.0000
+-1.2788 <s> JARVA 0.0000
+-1.5798 <s> JARVE 0.0000
+-1.5798 <s> JARVIH 0.0000
+-1.5798 <s> JARVIS 0.0000
+-1.5798 <s> JARVIT 0.0000
+-1.5798 <s> JARVY 0.0000
+-1.5798 <s> JAT 0.0000
+-0.3010 JA </s> -0.3010
+-0.3010 JAF </s> -0.3010
+-0.3010 JAK </s> -0.3010
+-0.3010 JAL </s> -0.3010
+-0.3010 JAN </s> -0.3010
+-0.3010 JAR </s> -0.3010
+-0.3010 JARH </s> -0.3010
+-0.3010 JARL </s> -0.3010
+-0.3010 JARM </s> -0.3010
+-0.3010 JART </s> -0.3010
+-0.3010 JARV </s> -0.3010
+-0.3010 JARVA </s> -0.3010
+-0.3010 JARVE </s> -0.3010
+-0.3010 JARVIH </s> -0.3010
+-0.3010 JARVIS </s> -0.3010
+-0.3010 JARVIT </s> -0.3010
+-0.3010 JARVY </s> -0.3010
+-0.3010 JAT </s> -0.3010
+
+\3-grams:
+-0.3010 <s> JA </s>
+-0.3010 <s> JAF </s>
+-0.3010 <s> JAK </s>
+-0.3010 <s> JAL </s>
+-0.3010 <s> JAN </s>
+-0.3010 <s> JAR </s>
+-0.3010 <s> JARH </s>
+-0.3010 <s> JARL </s>
+-0.3010 <s> JARM </s>
+-0.3010 <s> JART </s>
+-0.3010 <s> JARV </s>
+-0.3010 <s> JARVA </s>
+-0.3010 <s> JARVE </s>
+-0.3010 <s> JARVIH </s>
+-0.3010 <s> JARVIS </s>
+-0.3010 <s> JARVIT </s>
+-0.3010 <s> JARVY </s>
+-0.3010 <s> JAT </s>
+
+\end\

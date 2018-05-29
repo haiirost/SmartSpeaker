@@ -48,10 +48,10 @@ int main(int argc, char *argv[])
 
     printf("%s\n", hyp);
 /*
-    int rescmp = strcmp(hyp, "JARVICE");
+    int rescmp = strcmp(hyp, "JARVIS");
 
     if (!rescmp) {
-        printf("Detected!\n"); 
+        printf("1\n"); 
 	fclose(fh);
         ps_free(ps);
         cmd_ln_free_r(config);

@@ -28,7 +28,7 @@ while True:
             in_speech_bf = decoder.get_in_speech()
             if not in_speech_bf:
                 decoder.end_utt()
-                if decoder.hyp().hypstr == 'JARVICE':
+                if decoder.hyp().hypstr == 'JARVIS':
                     print (1)
                 else:
                     print (decoder.hyp().hypstr)

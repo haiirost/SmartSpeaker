@@ -1,4 +1,4 @@
-#!/usr/bin/python
+# Распознавание Sphinx из существующего файла
 
 from os import environ, path
 import pyaudio

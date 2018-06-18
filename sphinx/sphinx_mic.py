@@ -1,4 +1,4 @@
-#!/usr/bin/python
+# Без создания конкретного файла, запись звуков при помощи скрипта и распознавание Sphinx
 
 from os import environ, path
 import pyaudio

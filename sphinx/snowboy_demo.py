@@ -2,7 +2,7 @@ import snowboydecoder
 import sys
 import signal
 
-interrupted = False
+interrupted = False;
 
 def signal_handler(signal, frame):
     global interrupted

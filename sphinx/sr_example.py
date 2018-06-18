@@ -2,39 +2,48 @@
 
 # NOTE: this example requires PyAudio because it uses the Microphone class
 
-import time
-
 import speech_recognition as sr
 
-
-# this is called from the background thread
-def callback(recognizer, audio):
-    # received audio data, now we'll recognize it using Google Speech Recognition
-    try:
-        # for testing purposes, we're just using the default API key
-        # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
-        # instead of `r.recognize_google(audio)`
-        print("Google Speech Recognition thinks you said " + recognizer.recognize_google(audio))
-    except sr.UnknownValueError:
-        print("Google Speech Recognition could not understand audio")
-    except sr.RequestError as e:
-        print("Could not request results from Google Speech Recognition service; {0}".format(e))
-
-
+# obtain audio from the microphone
 r = sr.Recognizer()
-m = sr.Microphone()
-with m as source:
-    r.adjust_for_ambient_noise(source)  # we only need to calibrate once, before we start listening
+with sr.Microphone() as source:
+    print("Say something!")
+    audio = r.listen(source)
 
-# start listening in the background (note that we don't have to do this inside a `with` statement)
-stop_listening = r.listen_in_background(m, callback)
-# `stop_listening` is now a function that, when called, stops background listening
+# recognize speech using Sphinx
+try:
+    print("Sphinx thinks you said " + r.recognize_sphinx(audio))
+except sr.UnknownValueError:
+    print("Sphinx could not understand audio")
+except sr.RequestError as e:
+    print("Sphinx error; {0}".format(e))
 
-# do some unrelated computations for 5 seconds
-for _ in range(50): time.sleep(0.1)  # we're still listening even though the main thread is doing other things
+# recognize speech using Google Speech Recognition
+try:
+    # for testing purposes, we're just using the default API key
+    # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
+    # instead of `r.recognize_google(audio)`
+    print("Google Speech Recognition thinks you said " + r.recognize_google(audio))
+except sr.UnknownValueError:
+    print("Google Speech Recognition could not understand audio")
+except sr.RequestError as e:
+    print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
-# calling this function requests that the background listener stop listening
-stop_listening(wait_for_stop=False)
+# recognize speech using Google Cloud Speech
+GOOGLE_CLOUD_SPEECH_CREDENTIALS = r"""INSERT THE CONTENTS OF THE GOOGLE CLOUD SPEECH JSON CREDENTIALS FILE HERE"""
+try:
+    print("Google Cloud Speech thinks you said " + r.recognize_google_cloud(audio, credentials_json=GOOGLE_CLOUD_SPEECH_CREDENTIALS))
+except sr.UnknownValueError:
+    print("Google Cloud Speech could not understand audio")
+except sr.RequestError as e:
+    print("Could not request results from Google Cloud Speech service; {0}".format(e))
 
-# do some more unrelated things
-while True: time.sleep(0.1)  # we're not listening anymore, even though the background thread might still be running for a second or two while cleaning up and stopping
+# recognize speech using Microsoft Bing Voice Recognition
+BING_KEY = "INSERT BING API KEY HERE"  # Microsoft Bing Voice Recognition API keys 32-character lowercase hexadecimal strings
+try:
+    print("Microsoft Bing Voice Recognition thinks you said " + r.recognize_bing(audio, key=BING_KEY))
+except sr.UnknownValueError:
+    print("Microsoft Bing Voice Recognition could not understand audio")
+except sr.RequestError as e:
+    print("Could not request results from Microsoft Bing Voice Recognition service; {0}".format(e))
+

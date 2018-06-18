@@ -20,7 +20,7 @@ rec -r 16k -e signed-integer -b 16 -c 1 hello_ps.raw
 
 #Sphinx mic read continuous
 
-pocketsphinx_continuous -inmic yes -lm /home/stas/Sphinx/j.lm -dict /home/stas/Sphinx/j.dic
+pocketsphinx_continuous -inmic yes -lm /var/www/sphinx/j.lm -dict /var/www/sphinx/j.dic
 
 gcc -o sphinx_mic sphinx_mic.c     -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\"     `pkg-config --cflags --libs pocketsphinx sphinxbase`
 
